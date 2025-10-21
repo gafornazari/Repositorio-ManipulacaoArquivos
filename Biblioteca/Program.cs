@@ -109,6 +109,7 @@ bool ProcurarLivro(string titulo)
 
 do
 {
+    Console.Clear();
     Console.WriteLine("---- MENU ----");
     Console.WriteLine("1 - Adicionar livro");
     Console.WriteLine("2 - Remover livro");
@@ -142,10 +143,15 @@ do
                 livros.RemoveAll(l => l.Titulo.Equals(tituloRemover, StringComparison.OrdinalIgnoreCase));
                 Console.WriteLine("Livro removido!");
             }
+            Console.WriteLine("Pressione ENTER para continuar");
+            Console.ReadKey();
             break;
 
         case 3:
             MostrarLivros(livros);
+            Console.WriteLine("Pressione ENTER para continuar");
+            Console.ReadKey();
+
             break;
 
         case 4:
@@ -156,6 +162,8 @@ do
                 Console.WriteLine("Livro editado!");
             else
                 Console.WriteLine("Livro não encontrado!");
+            Console.WriteLine("Pressione ENTER para continuar");
+            Console.ReadKey();
             break;
         case 0:
             SalvarListaLivros(livros, fullPath);
